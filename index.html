@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Audio Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 60px;
+      background: #f5f7fb;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      display: block;
+      margin: 15px auto;
+      padding: 14px 32px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background-color: #0078ff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.25s ease;
+      width: 250px;
+    }
+
+    button:hover {
+      background-color: #005fc2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎧 Boris Johnson AI Soundboard</h1>
+
+  <button onclick="playAudio('Do_you_use_AI.mp4')">Do you use AI?</button>
+  <button onclick="playAudio('I_love_AI.mp4')">I love AI</button>
+  <button onclick="playAudio('Do_you_use_ChatGPT.mp4')">Do you use ChatGPT?</button>
+  <button onclick="playAudio('chatgpt.mp4')">ChatGPT</button>
+  <button onclick="playAudio('ai.mp4')">AI</button>
+
+  <script>
+    let currentAudio = null;
+
+    function playAudio(file) {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+      currentAudio = new Audio(file);
+      currentAudio.play();
+    }
+  </script>
+
+</body>
+</html>
